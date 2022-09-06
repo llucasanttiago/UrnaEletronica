@@ -8,6 +8,7 @@ let numeros = document.querySelector('.d-1-3');
 let etapaAtual = 0;
 let numero = '';
 let votoBranco = false;
+let votos = []
 
 function comecarEtapa() {
     let etapa = etapas[etapaAtual];
@@ -46,7 +47,11 @@ function atualizaInterface(){
         descricao.innerHTML = `Nome: ${candidato.nome}<br/>Partido: ${candidato.partido}`;
         let fotosHtml = '';
         for (let i in candidato.fotos) {
-            fotosHtml += `<div class="d-1-image"><img src="images/${candidato.fotos[i].url}" alt="Prefeito"/>${candidato.fotos[i].legenda}<div>`;
+            if(candidato.fotos[i].url.small){
+                fotosHtml += `<div class="d-1-image small"><img src="images/${candidato.fotos[i].url}" alt="Prefeito"/>${candidato.fotos[i].legenda} <div>`;
+            } else { 
+                fotosHtml += `<div class="d-1-image"><img src="images/${candidato.fotos[i].url}" alt="Prefeito"/>${candidato.fotos[i].legenda}<div>`;
+            }
         }
         lateral.innerHTML = fotosHtml;
     } else {
@@ -70,20 +75,37 @@ function clicou(n) {
         }
     }
 }
-function branco(b) {
-    if(numero === ''){
+function branco() {
+        numero = '';
         votoBranco = true;
+
         seuVotoPara.style.display = 'block';
         aviso.style.display = 'block';
         numeros.innerHTML = '';
         descricao.innerHTML = '<div class="aviso-grande pisca">VOTO EM BRANCO</div>';
+        lateral.innerHTML = '';
     }
-}
-function corrige(c) {
+function corrige() {
     comecarEtapa();
 }
-function confirma(c) {
-    
+function confirma() {
+    let etapa = etapas[etapaAtual];
+    let votoConfirmado = false;
+    if(votoBranco === true) {
+        votoConfirmado = true;
+        alert("Confirmando como BRANCO ...");
+    } else if(numero.length === etapa.numeros){
+        votoConfirmado = true;
+        alert("Confirmando como: " +numero);
+    }
+    if(votoConfirmado){
+        etapaAtual++;
+        if(etapas[etapaAtual] !== undefined) {
+            comecarEtapa();
+        } else {
+            document.querySelector('.tela').innerHTML = '<div class="aviso-gigante pisca">FIM</div>';
+        }
+    }
 }
 
 comecarEtapa();

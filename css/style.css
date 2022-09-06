@@ -4,7 +4,7 @@
     100%{opacity: 0.2;}
 }
 
-body {
+.container {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -122,10 +122,10 @@ body {
     font-size: 14px;
 }
 .d-1-right img{
-    width: 120%;
+    width: 100%;
 }
 .d-1-image.small{
-    width: 90%;
+    width: 80%;
     font-size: 12px;
 }
 .d-2{
@@ -134,8 +134,43 @@ body {
     border-top: 2px solid #000;
     padding-left: 10px;
 }
-
 .aviso-grande{
     font-size: 40px;
     font-weight: bold;
 }
+.aviso-gigante{
+    font-size: 70px;
+    font-weight: bold;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instrucoes-uso{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.candidatos-instrucao{
+    padding: 15px;
+    max-width: 1200px;
+}
+
+@media (max-width: 600px) {
+    .urna{
+        display: block;
+        margin: 15px;
+    }
+    .tela{
+        width: 400px;
+    }
+    .teclado{
+        margin: 0 auto;
+        margin-top: 5px;
+    }
+}
+
+

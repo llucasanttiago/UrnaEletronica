@@ -5,15 +5,15 @@ let etapas = [
         candidatos: [
             {
                 numero: '12345',
-                nome: 'Silvio',
+                nome: 'Silvio Oliveira',
                 partido: 'AAA',
                 fotos: [
-                    {url: '../images/img1.png', legenda: 'Vereador'}
+                    {url:'../images/img1.png', legenda: 'Vereador'}
              ]   
             },
             {
                 numero: '67890',
-                nome: 'Vitor',
+                nome: 'Lucia Neves',
                 partido: 'BBB',
                 fotos: [
                     {url:'../images/img2.png', legenda: 'Vereador'}
@@ -26,23 +26,23 @@ let etapas = [
         numeros: 2,
         candidatos: [
             {
-                numero: '12',
-                nome: 'Cleiton',
-                partido: 'CC',
-                vice: 'Janilson',
+                numero: '99',
+                nome: 'Junior Mendez',
+                partido: 'ABC',
+                vice: 'Jorge',
                 fotos: [
-                    {url: '../images/img3.png', lengenda: 'Prefeito'},
-                    {url: '../images/img3.png', lengenda: 'Vice-Prefeito', small: true}
+                    {url:'../images/img3.jpg', legenda: 'Prefeito'},
+                    {url:'../images/img3.jpg', legenda: 'Vice-Prefeito', small: true}
                 ]
             },
             {
                 numero: '34',
-                nome: 'Armando',
+                nome: 'Gisele da Silva',
                 partido: 'DD',
                 vice: 'Clodoaldo',
-                fotos: [
-                    {url: '../images/img4.png', legenda: 'Prefeito'},
-                    {url: '../images/img4.png', legenda: 'Vice-Prefeito', small: true}
+                fotos:[
+                    {url:'../images/img4.jpg', legenda: 'Prefeito'},
+                    {url:'../images/img4.jpg', legenda: 'Vice-Prefeito', small: true}
                 ]
             },
         ]
